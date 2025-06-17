@@ -1,0 +1,36 @@
+###############################################################################
+# Bazel now uses Bzlmod by default to manage external dependencies.
+# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
+#
+# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
+###############################################################################
+module(
+    name = "rumi",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_cc", version = "0.0.8")
+bazel_dep(name = "bazel_skylib", version = "1.4.2")
+bazel_dep(name = "tflite", version = "0.0.1")
+local_path_override(
+    module_name = "tflite",
+    path = "third_party/tflite",
+)
+
+# Palm model
+local_path_override(
+    module_name = "com_google_mediapipe_palm_detection_full_tflite",
+    path = "third_party/models/palm_detection",
+)
+
+# Hand landmark model
+local_path_override(
+    module_name = "com_google_mediapipe_hand_landmark_full_tflite",
+    path = "third_party/models/hand_landmark",
+)
+
+## Local vendored TFLite
+#local_path_override(
+#    module_name = "org_tensorflow",
+#    path = "third_party/tflite"
+#)

@@ -1,0 +1,1 @@
+module(name = "tflite", version = "0.0.1")
