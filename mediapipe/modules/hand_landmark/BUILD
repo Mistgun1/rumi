@@ -26,7 +26,7 @@ licenses(["notice"])
 package(default_visibility = ["//visibility:public"])
 
 filegroup(
-    name = "hand_landmark_full.tflite",
+    name = "hand_landmark_full",
     srcs = ["hand_landmark_full.tflite"],
     visibility = ["//visibility:public"],
 )

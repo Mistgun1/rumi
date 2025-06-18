@@ -21,12 +21,12 @@ load(
     "mediapipe_simple_subgraph",
 )
 
-licenses(["notice"])
+#licenses(["notice"])
 
 package(default_visibility = ["//visibility:public"])
 
 filegroup(
-    name = "palm_detection_full.tflite",
+    name = "palm_detection_full",
     srcs = ["palm_detection_full.tflite"],
     visibility = ["//visibility:public"],
 )
