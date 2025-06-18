@@ -25,10 +25,11 @@ licenses(["notice"])
 
 package(default_visibility = ["//visibility:public"])
 
-mediapipe_files(srcs = [
-    "hand_landmark_full.tflite",
-    "hand_landmark_lite.tflite",
-])
+filegroup(
+    name = "hand_landmark_full.tflite",
+    srcs = ["hand_landmark_full.tflite"],
+    visibility = ["//visibility:public"],
+)
 
 exports_files(srcs = ["handedness.txt"])
 

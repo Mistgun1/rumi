@@ -1,11 +1,12 @@
 filegroup(
-    name = "hand_tracking_gpu.pbtxt",
+    name = "hand_tracking_gpu",
     srcs = ["hand_tracking_gpu.pbtxt"],
     visibility = ["//visibility:public"],
 )
 
-cc_library(
-    name = "hand_tracking_gpu",
-    hdrs = [],
+filegroup(
+    name = "hand_tracking_desktop_live",
+    srcs = ["hand_tracking_desktop_live.pbtxt"],
     visibility = ["//visibility:public"],
 )
+

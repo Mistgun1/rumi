@@ -25,10 +25,11 @@ licenses(["notice"])
 
 package(default_visibility = ["//visibility:public"])
 
-mediapipe_files(srcs = [
-    "palm_detection_full.tflite",
-    "palm_detection_lite.tflite",
-])
+filegroup(
+    name = "palm_detection_full.tflite",
+    srcs = ["palm_detection_full.tflite"],
+    visibility = ["//visibility:public"],
+)
 
 mediapipe_simple_subgraph(
     name = "palm_detection_model_loader",

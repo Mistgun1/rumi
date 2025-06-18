@@ -10,25 +10,20 @@ module(
 )
 
 bazel_dep(name = "rules_cc", version = "0.0.8")
-bazel_dep(name = "bazel_skylib", version = "1.4.2")
+bazel_dep(name = "bazel_skylib", version = "1.5.0")
 bazel_dep(name = "tflite", version = "0.0.1")
 local_path_override(
     module_name = "tflite",
     path = "third_party/tflite",
 )
 
-# Palm model
-local_path_override(
-    module_name = "com_google_mediapipe_palm_detection_full_tflite",
-    path = "third_party/models/palm_detection",
-)
+#use_repo(name = "palm_model", path = "third_party/models/palm_detection")
+#use_repo(name = "hand_model", path = "third_party/models/hand_landmark")
 
-# Hand landmark model
-local_path_override(
-    module_name = "com_google_mediapipe_hand_landmark_full_tflite",
-    path = "third_party/models/hand_landmark",
-)
-
+#declare_models = use_extension("//third_party/models:extensions.bzl", "declare_models")
+#use_repo(declare_models, "palm_model")
+#use_repo(declare_models, "hand_model")
+#
 ## Local vendored TFLite
 #local_path_override(
 #    module_name = "org_tensorflow",
